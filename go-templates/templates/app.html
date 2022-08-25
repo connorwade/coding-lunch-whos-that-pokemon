@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who's That Pokemon?</title>
+</head>
+<body>
+    <section>
+        <header>
+            <h1>Who's That Pokemon?</h1>
+            <hr />
+        </header>
+        <main>
+            <h5>{{.flavorText}}</h5>
+            <h5>Type: {{range.types}}<span>{{.}} </span>{{end}}</h5>
+            <h5>Height: {{.height}}</h5>
+            <h5>Weight: {{.weight}}</h5>
+            <h5>HP: {{.hp}}</h5>
+            <h5>ATK: {{.atk}}</h5>
+            <h5>DEF: {{.def}}</h5>
+            <h5>SpATK: {{.spAtk}}</h5>
+            <h5>SpDEF: {{.spDef}}</h5>
+            <h5>SPD: {{.spd}}</h5>
+            <h3 class="result"></h3>
+        </main>
+        <hr />
+        <form method="post">
+            <label for="guessInput">So Who's That Pokemon?</label>
+            <input id="guessInput" type="text" />
+            <input type="submit" value="Guess">
+        </form>
+        <hr />
+        <ol>
+            {{range .names}}<li class="pokemonName">{{.}}</li>{{end}}
+        </ol>
+    </section>
+    <script src="/js/main.js"></script>
+</body>
+</html>
